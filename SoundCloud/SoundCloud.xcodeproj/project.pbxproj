@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		637EAD891D1B16810082BFE7 /* Album+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 637EAD861D1B16810082BFE7 /* Album+CoreDataProperties.m */; };
+		637EAD8A1D1B16810082BFE7 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 637EAD881D1B16810082BFE7 /* Album.m */; };
+		637EAD8D1D1B2BE90082BFE7 /* SCAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 637EAD8C1D1B2BE90082BFE7 /* SCAlbum.m */; };
+		638F84371D19D7E700349D98 /* SCServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 638F84361D19D7E700349D98 /* SCServiceManager.m */; };
+		638F843A1D19E02A00349D98 /* SCDataSerializationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 638F84391D19E02A00349D98 /* SCDataSerializationManager.m */; };
+		63AC41F51D16C05E001E6C14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AC41F41D16C05E001E6C14 /* main.m */; };
+		63AC41F81D16C05E001E6C14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AC41F71D16C05E001E6C14 /* AppDelegate.m */; };
+		63AC41FE1D16C05E001E6C14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63AC41FC1D16C05E001E6C14 /* Main.storyboard */; };
+		63AC42011D16C05E001E6C14 /* SoundCloud.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63AC41FF1D16C05E001E6C14 /* SoundCloud.xcdatamodeld */; };
+		63AC42031D16C05E001E6C14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63AC42021D16C05E001E6C14 /* Assets.xcassets */; };
+		63AC42061D16C05E001E6C14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63AC42041D16C05E001E6C14 /* LaunchScreen.storyboard */; };
+		63AC420F1D16C39C001E6C14 /* SCCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AC420E1D16C39C001E6C14 /* SCCollectionViewController.m */; };
+		63AC42141D16CB0B001E6C14 /* SCCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AC42121D16CB0B001E6C14 /* SCCollectionViewCell.m */; };
+		63AC42191D16CC45001E6C14 /* SCHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AC42181D16CC45001E6C14 /* SCHeaderCollectionReusableView.m */; };
+		63AC421D1D16CCBB001E6C14 /* SCFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AC421C1D16CCBB001E6C14 /* SCFooterCollectionReusableView.m */; };
+		63FFE5671D16F75200F9742C /* SCNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FFE5661D16F75200F9742C /* SCNetworkManager.m */; };
+		63FFE56B1D16F7C500F9742C /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FFE56A1D16F7C500F9742C /* Const.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		637EAD851D1B16810082BFE7 /* Album+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Album+CoreDataProperties.h"; path = "Model/Album+CoreDataProperties.h"; sourceTree = "<group>"; };
+		637EAD861D1B16810082BFE7 /* Album+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Album+CoreDataProperties.m"; path = "Model/Album+CoreDataProperties.m"; sourceTree = "<group>"; };
+		637EAD871D1B16810082BFE7 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Album.h; path = Model/Album.h; sourceTree = "<group>"; };
+		637EAD881D1B16810082BFE7 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Album.m; path = Model/Album.m; sourceTree = "<group>"; };
+		637EAD8B1D1B2BE90082BFE7 /* SCAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCAlbum.h; path = Model/SCAlbum.h; sourceTree = "<group>"; };
+		637EAD8C1D1B2BE90082BFE7 /* SCAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCAlbum.m; path = Model/SCAlbum.m; sourceTree = "<group>"; };
+		638F84351D19D7E700349D98 /* SCServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCServiceManager.h; sourceTree = "<group>"; };
+		638F84361D19D7E700349D98 /* SCServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCServiceManager.m; sourceTree = "<group>"; };
+		638F84381D19E02A00349D98 /* SCDataSerializationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCDataSerializationManager.h; sourceTree = "<group>"; };
+		638F84391D19E02A00349D98 /* SCDataSerializationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCDataSerializationManager.m; sourceTree = "<group>"; };
+		63AC41F01D16C05E001E6C14 /* SoundCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63AC41F41D16C05E001E6C14 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		63AC41F61D16C05E001E6C14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		63AC41F71D16C05E001E6C14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		63AC41FD1D16C05E001E6C14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		63AC42001D16C05E001E6C14 /* SoundCloud.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SoundCloud.xcdatamodel; sourceTree = "<group>"; };
+		63AC42021D16C05E001E6C14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63AC42051D16C05E001E6C14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		63AC42071D16C05E001E6C14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63AC420D1D16C39C001E6C14 /* SCCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCCollectionViewController.h; path = View/SCCollectionViewController.h; sourceTree = "<group>"; };
+		63AC420E1D16C39C001E6C14 /* SCCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCCollectionViewController.m; path = View/SCCollectionViewController.m; sourceTree = "<group>"; };
+		63AC42111D16CB0B001E6C14 /* SCCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCollectionViewCell.h; sourceTree = "<group>"; };
+		63AC42121D16CB0B001E6C14 /* SCCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCollectionViewCell.m; sourceTree = "<group>"; };
+		63AC42171D16CC45001E6C14 /* SCHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCHeaderCollectionReusableView.h; sourceTree = "<group>"; };
+		63AC42181D16CC45001E6C14 /* SCHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCHeaderCollectionReusableView.m; sourceTree = "<group>"; };
+		63AC421B1D16CCBB001E6C14 /* SCFooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCFooterCollectionReusableView.h; sourceTree = "<group>"; };
+		63AC421C1D16CCBB001E6C14 /* SCFooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFooterCollectionReusableView.m; sourceTree = "<group>"; };
+		63FFE5651D16F75200F9742C /* SCNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNetworkManager.h; sourceTree = "<group>"; };
+		63FFE5661D16F75200F9742C /* SCNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNetworkManager.m; sourceTree = "<group>"; };
+		63FFE5691D16F7C500F9742C /* Const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
+		63FFE56A1D16F7C500F9742C /* Const.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Const.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		63AC41ED1D16C05E001E6C14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		637EAD841D1B16480082BFE7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				637EAD851D1B16810082BFE7 /* Album+CoreDataProperties.h */,
+				637EAD861D1B16810082BFE7 /* Album+CoreDataProperties.m */,
+				637EAD871D1B16810082BFE7 /* Album.h */,
+				637EAD881D1B16810082BFE7 /* Album.m */,
+				637EAD8B1D1B2BE90082BFE7 /* SCAlbum.h */,
+				637EAD8C1D1B2BE90082BFE7 /* SCAlbum.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		63AC41E71D16C05E001E6C14 = {
+			isa = PBXGroup;
+			children = (
+				63AC41F21D16C05E001E6C14 /* SoundCloud */,
+				63AC41F11D16C05E001E6C14 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		63AC41F11D16C05E001E6C14 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63AC41F01D16C05E001E6C14 /* SoundCloud.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		63AC41F21D16C05E001E6C14 /* SoundCloud */ = {
+			isa = PBXGroup;
+			children = (
+				63AC41F61D16C05E001E6C14 /* AppDelegate.h */,
+				63AC41F71D16C05E001E6C14 /* AppDelegate.m */,
+				638F84351D19D7E700349D98 /* SCServiceManager.h */,
+				638F84361D19D7E700349D98 /* SCServiceManager.m */,
+				63FFE5691D16F7C500F9742C /* Const.h */,
+				63FFE56A1D16F7C500F9742C /* Const.m */,
+				63FFE5681D16F75B00F9742C /* Network + Serialization */,
+				63AC42101D16C3A2001E6C14 /* View */,
+				637EAD841D1B16480082BFE7 /* Model */,
+				63AC42021D16C05E001E6C14 /* Assets.xcassets */,
+				63AC42041D16C05E001E6C14 /* LaunchScreen.storyboard */,
+				63AC42071D16C05E001E6C14 /* Info.plist */,
+				63AC41FF1D16C05E001E6C14 /* SoundCloud.xcdatamodeld */,
+				63AC41F31D16C05E001E6C14 /* Supporting Files */,
+			);
+			path = SoundCloud;
+			sourceTree = "<group>";
+		};
+		63AC41F31D16C05E001E6C14 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				63AC41F41D16C05E001E6C14 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		63AC42101D16C3A2001E6C14 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63AC41FC1D16C05E001E6C14 /* Main.storyboard */,
+				63AC420D1D16C39C001E6C14 /* SCCollectionViewController.h */,
+				63AC420E1D16C39C001E6C14 /* SCCollectionViewController.m */,
+				63AC421A1D16CC9C001E6C14 /* Timer */,
+				63AC42161D16CC1E001E6C14 /* Cells */,
+				63AC421E1D16CCC3001E6C14 /* Scores */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		63AC42161D16CC1E001E6C14 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				63AC42111D16CB0B001E6C14 /* SCCollectionViewCell.h */,
+				63AC42121D16CB0B001E6C14 /* SCCollectionViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		63AC421A1D16CC9C001E6C14 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				63AC42171D16CC45001E6C14 /* SCHeaderCollectionReusableView.h */,
+				63AC42181D16CC45001E6C14 /* SCHeaderCollectionReusableView.m */,
+			);
+			name = Timer;
+			sourceTree = "<group>";
+		};
+		63AC421E1D16CCC3001E6C14 /* Scores */ = {
+			isa = PBXGroup;
+			children = (
+				63AC421B1D16CCBB001E6C14 /* SCFooterCollectionReusableView.h */,
+				63AC421C1D16CCBB001E6C14 /* SCFooterCollectionReusableView.m */,
+			);
+			name = Scores;
+			sourceTree = "<group>";
+		};
+		63FFE5681D16F75B00F9742C /* Network + Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				63FFE5651D16F75200F9742C /* SCNetworkManager.h */,
+				63FFE5661D16F75200F9742C /* SCNetworkManager.m */,
+				638F84381D19E02A00349D98 /* SCDataSerializationManager.h */,
+				638F84391D19E02A00349D98 /* SCDataSerializationManager.m */,
+			);
+			name = "Network + Serialization";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		63AC41EF1D16C05E001E6C14 /* SoundCloud */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63AC420A1D16C05E001E6C14 /* Build configuration list for PBXNativeTarget "SoundCloud" */;
+			buildPhases = (
+				63AC41EC1D16C05E001E6C14 /* Sources */,
+				63AC41ED1D16C05E001E6C14 /* Frameworks */,
+				63AC41EE1D16C05E001E6C14 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoundCloud;
+			productName = SoundCloud;
+			productReference = 63AC41F01D16C05E001E6C14 /* SoundCloud.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63AC41E81D16C05E001E6C14 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "David Lashkhi";
+				TargetAttributes = {
+					63AC41EF1D16C05E001E6C14 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 63AC41EB1D16C05E001E6C14 /* Build configuration list for PBXProject "SoundCloud" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 63AC41E71D16C05E001E6C14;
+			productRefGroup = 63AC41F11D16C05E001E6C14 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				63AC41EF1D16C05E001E6C14 /* SoundCloud */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63AC41EE1D16C05E001E6C14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63AC42061D16C05E001E6C14 /* LaunchScreen.storyboard in Resources */,
+				63AC42031D16C05E001E6C14 /* Assets.xcassets in Resources */,
+				63AC41FE1D16C05E001E6C14 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63AC41EC1D16C05E001E6C14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63FFE5671D16F75200F9742C /* SCNetworkManager.m in Sources */,
+				638F84371D19D7E700349D98 /* SCServiceManager.m in Sources */,
+				63AC420F1D16C39C001E6C14 /* SCCollectionViewController.m in Sources */,
+				637EAD8D1D1B2BE90082BFE7 /* SCAlbum.m in Sources */,
+				63AC41F81D16C05E001E6C14 /* AppDelegate.m in Sources */,
+				63FFE56B1D16F7C500F9742C /* Const.m in Sources */,
+				637EAD891D1B16810082BFE7 /* Album+CoreDataProperties.m in Sources */,
+				63AC42141D16CB0B001E6C14 /* SCCollectionViewCell.m in Sources */,
+				638F843A1D19E02A00349D98 /* SCDataSerializationManager.m in Sources */,
+				63AC41F51D16C05E001E6C14 /* main.m in Sources */,
+				637EAD8A1D1B16810082BFE7 /* Album.m in Sources */,
+				63AC42191D16CC45001E6C14 /* SCHeaderCollectionReusableView.m in Sources */,
+				63AC421D1D16CCBB001E6C14 /* SCFooterCollectionReusableView.m in Sources */,
+				63AC42011D16C05E001E6C14 /* SoundCloud.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		63AC41FC1D16C05E001E6C14 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63AC41FD1D16C05E001E6C14 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		63AC42041D16C05E001E6C14 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63AC42051D16C05E001E6C14 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		63AC42081D16C05E001E6C14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		63AC42091D16C05E001E6C14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		63AC420B1D16C05E001E6C14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SoundCloud/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lashkhi.SoundCloud;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		63AC420C1D16C05E001E6C14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SoundCloud/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lashkhi.SoundCloud;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63AC41EB1D16C05E001E6C14 /* Build configuration list for PBXProject "SoundCloud" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63AC42081D16C05E001E6C14 /* Debug */,
+				63AC42091D16C05E001E6C14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63AC420A1D16C05E001E6C14 /* Build configuration list for PBXNativeTarget "SoundCloud" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63AC420B1D16C05E001E6C14 /* Debug */,
+				63AC420C1D16C05E001E6C14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		63AC41FF1D16C05E001E6C14 /* SoundCloud.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				63AC42001D16C05E001E6C14 /* SoundCloud.xcdatamodel */,
+			);
+			currentVersion = 63AC42001D16C05E001E6C14 /* SoundCloud.xcdatamodel */;
+			path = SoundCloud.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 63AC41E81D16C05E001E6C14 /* Project object */;
+}
