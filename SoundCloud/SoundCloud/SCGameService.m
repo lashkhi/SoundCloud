@@ -28,6 +28,9 @@
 
 
 - (void)didSelectAlbum:(SCAlbum *)album atIndexPath:(NSIndexPath *)indexPath {
+    if ([self.selectedAlbums containsObject:album]) {
+        return;
+    }
     if (self.firstSelectedIndexPath) {
         [self compareAlbums:album withIndexPath:(NSIndexPath *)indexPath];
     } else {
