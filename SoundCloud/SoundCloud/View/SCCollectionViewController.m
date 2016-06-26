@@ -18,10 +18,11 @@
 @property (nonatomic, strong) SCServiceManager *serviceManager;
 @property (nonatomic, strong) SCGameService *gameService;
 @property (nonatomic, strong) NSArray *albums;
-@property (nonatomic, strong) NSIndexPath *prevoiuslySelectedIndexPath;
 @property (nonatomic, assign) BOOL blockSelecting;
 @property (nonatomic, weak) SCHeaderCollectionReusableView *timerView;
 @property (nonatomic, weak) SCFooterCollectionReusableView *scoreView;
+@property (nonatomic, assign) NSInteger previousTopScore;
+@property (nonatomic, assign) NSInteger previousTopTime;
 
 @end
 
@@ -151,8 +152,20 @@ static NSString * const reuseIdentifier = @"SCCollectionViewCell";
     self.scoreView.scoreLabel.text = [@(score) stringValue];
 }
 
+- (void)calculateTopScore {
+    if (self.previousTopTime < self.timerView.timerCount) {
+        self.previousTopTime = self.timerView.timerCount;
+        self.timerView.topTimerLabel.text = [@(self.previousTopTime) stringValue];
+    }
+    if (self.previousTopScore < self.gameService.score) {
+        self.previousTopScore = self.gameService.score;
+        self.scoreView.topScoreLabel.text = [@(self.previousTopScore) stringValue];
+    }
+}
+
 - (void)gameFinished:(NSNotification *)notification {
     [self.timerView stopTimer];
+    [self calculateTopScore];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Congratulations"
                                                                              message:@"You have finished game!"
                                                                       preferredStyle:UIAlertControllerStyleAlert];
@@ -162,5 +175,6 @@ static NSString * const reuseIdentifier = @"SCCollectionViewCell";
     [alertController addAction:actionOk];
     [self presentViewController:alertController animated:YES completion:nil];
 }
+
 
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SCCollectionViewController : UICollectionViewController 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTimeLabel;
 
 @end

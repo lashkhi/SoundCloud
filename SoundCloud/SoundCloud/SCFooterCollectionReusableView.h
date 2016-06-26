@@ -10,5 +10,6 @@
 
 @interface SCFooterCollectionReusableView : UICollectionReusableView
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *topScoreLabel;
 
 @end

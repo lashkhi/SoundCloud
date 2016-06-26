@@ -10,6 +10,9 @@
 
 @interface SCHeaderCollectionReusableView : UICollectionReusableView
 
+@property (assign, nonatomic) NSInteger timerCount;
+@property (weak, nonatomic) IBOutlet UILabel *topTimerLabel;
+
 - (void)start;
 - (void)stopTimer;
 

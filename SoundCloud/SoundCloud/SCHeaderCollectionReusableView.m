@@ -11,7 +11,6 @@
 @interface SCHeaderCollectionReusableView ()
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (strong, nonatomic) NSTimer *timer;
-@property (assign, nonatomic) NSInteger timerCount;
 @end
 
 @implementation SCHeaderCollectionReusableView
