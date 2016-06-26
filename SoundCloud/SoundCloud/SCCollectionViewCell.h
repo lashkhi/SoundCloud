@@ -12,5 +12,6 @@
 @property (assign, nonatomic) BOOL isHidden;
 
 - (void)setupCellWithImage:(UIImage *)image withId:(NSNumber *)albumId;
+- (void)hideImage:(BOOL)hide;
 
 @end

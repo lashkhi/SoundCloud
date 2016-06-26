@@ -12,6 +12,7 @@
 		637EAD8D1D1B2BE90082BFE7 /* SCAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 637EAD8C1D1B2BE90082BFE7 /* SCAlbum.m */; };
 		638F84371D19D7E700349D98 /* SCServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 638F84361D19D7E700349D98 /* SCServiceManager.m */; };
 		638F843A1D19E02A00349D98 /* SCDataSerializationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 638F84391D19E02A00349D98 /* SCDataSerializationManager.m */; };
+		63A9CAB71D1FF5FD003D4DC2 /* SCGameService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A9CAB61D1FF5FD003D4DC2 /* SCGameService.m */; };
 		63AC41F51D16C05E001E6C14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AC41F41D16C05E001E6C14 /* main.m */; };
 		63AC41F81D16C05E001E6C14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AC41F71D16C05E001E6C14 /* AppDelegate.m */; };
 		63AC41FE1D16C05E001E6C14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63AC41FC1D16C05E001E6C14 /* Main.storyboard */; };
@@ -37,6 +38,8 @@
 		638F84361D19D7E700349D98 /* SCServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCServiceManager.m; sourceTree = "<group>"; };
 		638F84381D19E02A00349D98 /* SCDataSerializationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCDataSerializationManager.h; sourceTree = "<group>"; };
 		638F84391D19E02A00349D98 /* SCDataSerializationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCDataSerializationManager.m; sourceTree = "<group>"; };
+		63A9CAB51D1FF5FD003D4DC2 /* SCGameService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGameService.h; sourceTree = "<group>"; };
+		63A9CAB61D1FF5FD003D4DC2 /* SCGameService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGameService.m; sourceTree = "<group>"; };
 		63AC41F01D16C05E001E6C14 /* SoundCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63AC41F41D16C05E001E6C14 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		63AC41F61D16C05E001E6C14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,6 +87,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		63A9CAB81D1FF61E003D4DC2 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				63A9CAB51D1FF5FD003D4DC2 /* SCGameService.h */,
+				63A9CAB61D1FF5FD003D4DC2 /* SCGameService.m */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
 		63AC41E71D16C05E001E6C14 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +121,7 @@
 				638F84361D19D7E700349D98 /* SCServiceManager.m */,
 				63FFE5691D16F7C500F9742C /* Const.h */,
 				63FFE56A1D16F7C500F9742C /* Const.m */,
+				63A9CAB81D1FF61E003D4DC2 /* Game */,
 				63FFE5681D16F75B00F9742C /* Network + Serialization */,
 				63AC42101D16C3A2001E6C14 /* View */,
 				637EAD841D1B16480082BFE7 /* Model */,
@@ -262,6 +275,7 @@
 				63AC41F51D16C05E001E6C14 /* main.m in Sources */,
 				637EAD8A1D1B16810082BFE7 /* Album.m in Sources */,
 				63AC42191D16CC45001E6C14 /* SCHeaderCollectionReusableView.m in Sources */,
+				63A9CAB71D1FF5FD003D4DC2 /* SCGameService.m in Sources */,
 				63AC421D1D16CCBB001E6C14 /* SCFooterCollectionReusableView.m in Sources */,
 				63AC42011D16C05E001E6C14 /* SoundCloud.xcdatamodeld in Sources */,
 			);

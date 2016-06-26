@@ -10,11 +10,13 @@
 #import "SCCollectionViewCell.h"
 #import "SCServiceManager.h"
 #import "SCAlbum.h"
-
+#import "SCGameService.h"
 
 @interface SCCollectionViewController ()
 @property (nonatomic, strong) SCServiceManager *serviceManager;
+@property (nonatomic, strong) SCGameService *gameService;
 @property (nonatomic, strong) NSArray *albums;
+@property (nonatomic, strong) NSIndexPath *prevoiuslySelectedIndexPath;
 
 @end
 
@@ -30,7 +32,7 @@ static NSString * const reuseIdentifier = @"SCCollectionViewCell";
         [self.serviceManager fetchDataForAlbumCovers:^(NSArray *albums) {
             self.albums = [self.serviceManager createRandomizedAlbumsArray:albums];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.collectionView reloadData];
+                [self startGame];
             });
         } failure:^(NSError *error) {
             //
@@ -43,15 +45,6 @@ static NSString * const reuseIdentifier = @"SCCollectionViewCell";
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -66,17 +59,29 @@ static NSString * const reuseIdentifier = @"SCCollectionViewCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SCCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    if (self.albums) {
+    if (!self.albums) {
+        [cell setupCellWithImage:nil withId:nil];
+    } else {
         SCAlbum *album = self.albums[indexPath.row];
         NSData *retrievedData = [NSData dataWithContentsOfFile:album.imageStorageURL];
         [cell setupCellWithImage:[UIImage imageWithData:retrievedData] withId:album.albumId];
-    } else {
-        [cell setupCellWithImage:nil withId:nil];
     }
     return cell;
 }
 
 #pragma mark <UICollectionViewDelegate>
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    SCCollectionViewCell *cell = (SCCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+    [cell hideImage:NO];
+    SCAlbum *album = self.albums[indexPath.row];
+    [self.gameService didSelectAlbum:album atIndexPath:indexPath];
+
+    dispatch_time_t waitTime = dispatch_time(DISPATCH_TIME_NOW, DelayForHidingAlbums);
+    dispatch_after(waitTime, dispatch_get_main_queue(), ^{
+        [self reloadCellsIfNeeded];
+    });
+}
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
@@ -106,5 +111,20 @@ static NSString * const reuseIdentifier = @"SCCollectionViewCell";
 	
 }
 */
+
+- (void)startGame {
+    self.gameService = [SCGameService new];
+    self.gameService.albums = self.albums;
+    [self.collectionView reloadData];
+}
+
+- (void)reloadCellsIfNeeded {
+    if (self.gameService.cellsToReload.count >=2) {
+        for (NSIndexPath *indexPath in self.gameService.cellsToReload) {
+            SCCollectionViewCell *cell = (SCCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+            [cell hideImage:YES];
+        }
+    }
+}
 
 @end

@@ -10,6 +10,7 @@
 
 extern NSString *const SCAPIURL;
 extern NSInteger const NumberOfCells;
+extern NSInteger const DelayForHidingAlbums;
 
 
 

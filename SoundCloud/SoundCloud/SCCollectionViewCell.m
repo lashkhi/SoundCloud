@@ -25,7 +25,7 @@
     if (image && albumId) {
         self.image = image;
         self.albumId = albumId;
-        [self hideImage:NO];
+        //[self hideImage:NO];
     } else {
         [self hideImage:YES];
     }
