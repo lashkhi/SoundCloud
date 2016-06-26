@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SCFooterCollectionReusableView : UICollectionReusableView
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
 @end

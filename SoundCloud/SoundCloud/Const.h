@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 extern NSString *const SCAPIURL;
+extern NSString *const GameFinishedNotification;
 extern NSInteger const NumberOfCells;
 extern NSInteger const DelayForHidingAlbums;
 

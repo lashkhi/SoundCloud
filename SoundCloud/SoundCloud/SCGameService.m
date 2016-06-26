@@ -8,6 +8,7 @@
 
 #import "SCGameService.h"
 #import "SCAlbum.h"
+#import "Const.h"
 
 @interface SCGameService ()
 
@@ -22,6 +23,7 @@
     if (self = [super init]) {
         self.cellsToReload = [NSMutableArray new];
         self.selectedAlbums = [NSMutableArray new];
+        self.score = 0;
     }
     return self;
 }
@@ -52,13 +54,22 @@
     [self.cellsToReload removeAllObjects];
     [self.selectedAlbums addObject:album];
     self.firstSelectedIndexPath = nil;
+    self.score =self.score + 10;
+    [self checkIfGameFinished];
 }
 
 - (void)pairNotFoundAtIndexPath:(NSIndexPath *)indexPath {
     [self.cellsToReload addObject:self.firstSelectedIndexPath];
     self.firstSelectedIndexPath = nil;
     self.previouslySelectedAlbum = nil;
+    self.score = self.score - 5;
     [self.cellsToReload addObject:indexPath];
+}
+
+- (void)checkIfGameFinished {
+    if (self.selectedAlbums.count == NumberOfCells/2) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:GameFinishedNotification object:nil];
+    }
 }
 
 @end

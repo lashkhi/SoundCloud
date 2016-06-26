@@ -20,6 +20,8 @@
 @property (nonatomic, strong) NSArray *albums;
 @property (nonatomic, strong) NSIndexPath *prevoiuslySelectedIndexPath;
 @property (nonatomic, assign) BOOL blockSelecting;
+@property (nonatomic, weak) SCHeaderCollectionReusableView *timerView;
+@property (nonatomic, weak) SCFooterCollectionReusableView *scoreView;
 
 @end
 
@@ -41,11 +43,16 @@ static NSString * const reuseIdentifier = @"SCCollectionViewCell";
             //
         }];
     });
+    [self createObservers];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)createObservers {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameFinished:) name:GameFinishedNotification object:nil];
 }
 
 
@@ -81,12 +88,11 @@ static NSString * const reuseIdentifier = @"SCCollectionViewCell";
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     UICollectionReusableView *reusableView;
     if (kind == UICollectionElementKindSectionHeader) {
-        SCHeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SCHeaderCollectionReusableView" forIndexPath:indexPath];
-                reusableView = headerView;
+        self.timerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SCHeaderCollectionReusableView" forIndexPath:indexPath];
+        reusableView = self.timerView;
     } else {
-        SCFooterCollectionReusableView *footerView =[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"SCFooterCollectionReusableView" forIndexPath:indexPath];
-        reusableView = footerView;
-
+        self.scoreView =[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"SCFooterCollectionReusableView" forIndexPath:indexPath];
+        reusableView = self.scoreView;
     }
     return reusableView;
 }
@@ -98,6 +104,7 @@ static NSString * const reuseIdentifier = @"SCCollectionViewCell";
     [cell hideImage:NO];
     SCAlbum *album = self.albums[indexPath.row];
     [self.gameService didSelectAlbum:album atIndexPath:indexPath];
+    [self scoreUp];
     [self reloadCellsIfNeeded];
 }
 
@@ -105,7 +112,20 @@ static NSString * const reuseIdentifier = @"SCCollectionViewCell";
 - (void)startGame {
     self.gameService = [SCGameService new];
     self.gameService.albums = self.albums;
+    [self startTimer];
+    self.scoreView.scoreLabel.text = [@(0) stringValue];
     [self.collectionView reloadData];
+}
+
+- (void)restartGame {
+    NSArray *albums = [self.albums copy];
+    self.albums = nil;
+    [self.collectionView reloadData];
+    dispatch_time_t waitTime = dispatch_time(DISPATCH_TIME_NOW, DelayForHidingAlbums*NSEC_PER_SEC);
+    dispatch_after(waitTime, dispatch_get_main_queue(), ^{
+        self.albums = [self.serviceManager createRandomizedAlbumsArray:albums];
+        [self startGame];
+    });    
 }
 
 - (void)reloadCellsIfNeeded {
@@ -120,6 +140,27 @@ static NSString * const reuseIdentifier = @"SCCollectionViewCell";
             self.blockSelecting = NO;
         });
     }
+}
+
+- (void)startTimer {
+    [self.timerView start];
+}
+
+- (void)scoreUp {
+    NSInteger score = self.gameService.score;
+    self.scoreView.scoreLabel.text = [@(score) stringValue];
+}
+
+- (void)gameFinished:(NSNotification *)notification {
+    [self.timerView stopTimer];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Congratulations"
+                                                                             message:@"You have finished game!"
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self restartGame];
+    }]; //You can use a block here to handle a press on this button
+    [alertController addAction:actionOk];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

@@ -63,6 +63,9 @@
                                 <constraint firstItem="LA9-Nx-JGP" firstAttribute="centerX" secondItem="YAi-wF-lrp" secondAttribute="centerX" id="UHI-To-lZ9"/>
                                 <constraint firstItem="LA9-Nx-JGP" firstAttribute="centerY" secondItem="YAi-wF-lrp" secondAttribute="centerY" id="ghs-pM-4QA"/>
                             </constraints>
+                            <connections>
+                                <outlet property="timerLabel" destination="LA9-Nx-JGP" id="bDf-eU-S5y"/>
+                            </connections>
                         </collectionReusableView>
                         <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SCFooterCollectionReusableView" id="6vN-VF-9P8" customClass="SCFooterCollectionReusableView">
                             <rect key="frame" x="0.0" y="130" width="600" height="50"/>
@@ -75,6 +78,9 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <connections>
+                                <outlet property="scoreLabel" destination="0Sf-VG-JSU" id="82j-sK-3YW"/>
+                            </connections>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="ahf-ai-gg7" id="bSR-d0-xN1"/>

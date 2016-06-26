@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) NSArray *albums;
 @property (nonatomic, strong) NSMutableArray *cellsToReload;
+@property (nonatomic, assign) NSInteger score;
 
 - (void)didSelectAlbum:(SCAlbum *)album atIndexPath:(NSIndexPath *)indexPath;
 

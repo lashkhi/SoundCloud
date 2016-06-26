@@ -10,4 +10,7 @@
 
 @interface SCHeaderCollectionReusableView : UICollectionReusableView
 
+- (void)start;
+- (void)stopTimer;
+
 @end
