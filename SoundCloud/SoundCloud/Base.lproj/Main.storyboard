@@ -52,13 +52,17 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LA9-Nx-JGP">
-                                    <rect key="frame" x="137" y="14" width="44" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LA9-Nx-JGP">
+                                    <rect key="frame" x="278" y="15" width="44" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="LA9-Nx-JGP" firstAttribute="centerX" secondItem="YAi-wF-lrp" secondAttribute="centerX" id="UHI-To-lZ9"/>
+                                <constraint firstItem="LA9-Nx-JGP" firstAttribute="centerY" secondItem="YAi-wF-lrp" secondAttribute="centerY" id="ghs-pM-4QA"/>
+                            </constraints>
                         </collectionReusableView>
                         <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SCFooterCollectionReusableView" id="6vN-VF-9P8" customClass="SCFooterCollectionReusableView">
                             <rect key="frame" x="0.0" y="130" width="600" height="50"/>

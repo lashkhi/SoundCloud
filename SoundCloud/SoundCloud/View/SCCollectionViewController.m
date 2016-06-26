@@ -8,6 +8,8 @@
 
 #import "SCCollectionViewController.h"
 #import "SCCollectionViewCell.h"
+#import "SCHeaderCollectionReusableView.h"
+#import "SCFooterCollectionReusableView.h"
 #import "SCServiceManager.h"
 #import "SCAlbum.h"
 #import "SCGameService.h"
@@ -17,6 +19,7 @@
 @property (nonatomic, strong) SCGameService *gameService;
 @property (nonatomic, strong) NSArray *albums;
 @property (nonatomic, strong) NSIndexPath *prevoiuslySelectedIndexPath;
+@property (nonatomic, assign) BOOL blockSelecting;
 
 @end
 
@@ -69,6 +72,25 @@ static NSString * const reuseIdentifier = @"SCCollectionViewCell";
     return cell;
 }
 
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    return !self.blockSelecting;
+}
+
+#pragma mark -  Timer
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    UICollectionReusableView *reusableView;
+    if (kind == UICollectionElementKindSectionHeader) {
+        SCHeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SCHeaderCollectionReusableView" forIndexPath:indexPath];
+                reusableView = headerView;
+    } else {
+        SCFooterCollectionReusableView *footerView =[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"SCFooterCollectionReusableView" forIndexPath:indexPath];
+        reusableView = footerView;
+
+    }
+    return reusableView;
+}
+
 #pragma mark <UICollectionViewDelegate>
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -76,41 +98,9 @@ static NSString * const reuseIdentifier = @"SCCollectionViewCell";
     [cell hideImage:NO];
     SCAlbum *album = self.albums[indexPath.row];
     [self.gameService didSelectAlbum:album atIndexPath:indexPath];
-
-    dispatch_time_t waitTime = dispatch_time(DISPATCH_TIME_NOW, DelayForHidingAlbums);
-    dispatch_after(waitTime, dispatch_get_main_queue(), ^{
-        [self reloadCellsIfNeeded];
-    });
+    [self reloadCellsIfNeeded];
 }
 
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 - (void)startGame {
     self.gameService = [SCGameService new];
@@ -120,10 +110,15 @@ static NSString * const reuseIdentifier = @"SCCollectionViewCell";
 
 - (void)reloadCellsIfNeeded {
     if (self.gameService.cellsToReload.count >=2) {
-        for (NSIndexPath *indexPath in self.gameService.cellsToReload) {
-            SCCollectionViewCell *cell = (SCCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
-            [cell hideImage:YES];
-        }
+        self.blockSelecting = YES;
+        dispatch_time_t waitTime = dispatch_time(DISPATCH_TIME_NOW, DelayForHidingAlbums*NSEC_PER_SEC);
+        dispatch_after(waitTime, dispatch_get_main_queue(), ^{
+            for (NSIndexPath *indexPath in self.gameService.cellsToReload) {
+                SCCollectionViewCell *cell = (SCCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+                [cell hideImage:YES];
+            }
+            self.blockSelecting = NO;
+        });
     }
 }
 
